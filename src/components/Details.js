@@ -10,11 +10,12 @@ export default class Details extends Component {
         {(value) => {
           const {
             id,
-            company,
+            band,
             img,
             info,
             price,
             title,
+            year,
             inCart,
           } = value.detailProduct;
           return (
@@ -26,12 +27,14 @@ export default class Details extends Component {
               </div>
               <div className="row">
                 <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
-                  <img src={img} className="img-fluid" alt="product" />
+                  <img src={img} className="img-fluid" alt={title} />
                 </div>
                 <div className="col-10 mx-auto col-md-6 my-3 text-capitalize">
-                  <h2>model: {title}</h2>
                   <h4 className="text-title text-uppercase text-muted mt-3 mb-2">
-                    made by : <span className="text-uppercase">{company}</span>
+                    by : <span className="text-uppercase">{band}</span>
+                  </h4>
+                  <h4 className="text-title text-uppercase text-muted mt-3 mb-2">
+                    year: {year}
                   </h4>
                   <h4 className="text-blue">
                     <strong>
@@ -41,12 +44,12 @@ export default class Details extends Component {
                     </strong>
                   </h4>
                   <p className="text-capitalize font-weight-bold mt-3 mb-0">
-                    some info about the product
+                    some info about the albums
                   </p>
                   <p className="text-muted lead">{info}</p>
                   <div>
                     <Link to="/">
-                      <ButtonContainer>back to products</ButtonContainer>
+                      <ButtonContainer>back to albums</ButtonContainer>
                     </Link>
                     <ButtonContainer
                       cart
